@@ -16,5 +16,9 @@ export const grid = () => {
 };
 
 export const text = () => {
-	return <Text color={'#Ddf967'}>text</Text>;
+	return (
+		<Text color={'#Ddf967'} size="3rem">
+			ddddd
+		</Text>
+	);
 };
