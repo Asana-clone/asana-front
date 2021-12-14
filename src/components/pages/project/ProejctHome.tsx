@@ -1,7 +1,7 @@
 import React from 'react';
 
 interface ProjectHomeProps {
-	test: string;
+	test?: string;
 }
 
 const ProjectHome: React.FC<ProjectHomeProps> = (props) => {

@@ -1,7 +1,7 @@
 import React from 'react';
 
 interface CalendarProps {
-	test: string;
+	test?: string;
 }
 
 const Calendar: React.FC<CalendarProps> = (props) => {

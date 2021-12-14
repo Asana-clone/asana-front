@@ -1,7 +1,7 @@
 import React from 'react';
 
 interface ListProps {
-	test: string;
+	test?: string;
 }
 
 const List: React.FC<ListProps> = (props) => {

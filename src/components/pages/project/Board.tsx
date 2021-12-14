@@ -1,7 +1,7 @@
 import React from 'react';
 
 interface BoardProps {
-	test: string;
+	test?: string;
 }
 
 const Board: React.FC<BoardProps> = (props) => {

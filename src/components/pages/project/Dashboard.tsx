@@ -1,7 +1,7 @@
 import React from 'react';
 
 interface DashboardProps {
-	test: string;
+	test?: string;
 }
 
 const Dashboard: React.FC<DashboardProps> = (props) => {
