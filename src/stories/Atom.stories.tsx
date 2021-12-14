@@ -14,7 +14,13 @@ export const avatar = () => {
 };
 
 export const grid = () => {
-	return <Grid>Grid</Grid>;
+	return (
+		<Grid kind={'FC'} position={'space-between'} width="500px" height="500px">
+			<p>aaa</p>
+			<p>aaa</p>
+			<p>aaa</p>
+		</Grid>
+	);
 };
 
 export const text = () => {
