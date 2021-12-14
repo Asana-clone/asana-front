@@ -3,6 +3,7 @@ import styled from '@emotion/styled';
 
 interface TextProps {
 	color: string;
+	fontSize: string;
 }
 
 const Text: React.FC<TextProps> = (props) => {

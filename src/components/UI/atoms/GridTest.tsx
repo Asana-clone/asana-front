@@ -1,5 +1,10 @@
+/** @jsxRuntime classic */
+/** @jsx jsx */
 import React from 'react';
 import styled from '@emotion/styled';
+import { jsx, css } from '@emotion/react';
+/* 테스트용 추후 삭제 */
+
 interface Props {
   width?: string;
   height?: string;
@@ -12,7 +17,7 @@ const Grid: React.FC<Props> = ({
   ...props
 }): React.ReactElement => {
   return (
-    <GridStyle onClick={_onClick} {...props}>
+    <GridStyle onClick={_onClick} {...props} css={css`color:blue;`}>
       {children}
     </GridStyle>
   )
