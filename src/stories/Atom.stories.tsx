@@ -17,13 +17,9 @@ export const grid = () => {
 };
 
 export const text = () => {
-	return (
-		<Text color={'#Ddf967'} size="3rem">
-			ddddd
-		</Text>
-	);
+	return <Text align="left">ddddd</Text>;
 };
 
 export const gridTest = () => {
 	return <GridTest>GridTest</GridTest>;
-}
+};

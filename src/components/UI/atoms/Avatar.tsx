@@ -20,7 +20,7 @@ Avatar.defaultProps = {
 	color: '#DDA211',
 };
 
-const AvatarCircle = styled.div`
+const AvatarCircle = styled('div')`
 	width: 36px;
 	height: 36px;
 	display: flex;
