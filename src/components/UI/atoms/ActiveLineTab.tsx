@@ -31,6 +31,9 @@ const LineTab = styled('button')<ActiveLineTabProps>`
 	padding: 0 0.5rem;
 	background-color: #fff;
 	cursor: pointer;
+	&:hover {
+		border-bottom: 2px solid black;
+	}
 	${(props) => props.active && `border-bottom: 2px solid black`}
 `;
 
