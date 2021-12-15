@@ -1,15 +1,7 @@
-import React, { useState, useReducer } from 'react';
+import React, { useState } from 'react';
 import ActiveLineTab from '../atoms/ActiveLineTab';
 
 interface ProjectNavProps {}
-
-// type Action = { type: 'setActive' };
-// function reducer(state: boolean, action: Action): any {
-//     switch(action.type) {
-//         case 'setActive':
-
-//     }
-// }
 
 const ProjectNav: React.FC<ProjectNavProps> = () => {
 	const [active, setActive] = useState(false);
