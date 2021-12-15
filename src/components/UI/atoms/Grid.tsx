@@ -8,6 +8,8 @@ interface Props {
 	background?: string;
 	kind?: 'FR' | 'FC';
 	position?: 'start' | 'center' | 'end' | 'space-between';
+	margin?: string;
+	padding?: string;
 }
 
 const Grid: React.FC<Props> = ({ _onClick, children, ...props }): React.ReactElement => {
@@ -22,16 +24,20 @@ Grid.defaultProps = {
 	width: '100%',
 	height: '100%',
 	_onClick: () => {},
-	background: 'black',
+	background: '#fff',
 	kind: 'FR',
 	position: 'center',
+	margin: '0 0 0 0',
+	padding: '0 0 0 0',
 };
 
 const Container = styled.div<Props>`
 	display: flex;
 	width: ${({ width }) => width};
 	height: ${({ height }) => height};
-	background-color: ${({ background }) => background};
+	background-color: ${(props) => props.background};
+	margin: ${(props) => props.margin};
+	padding: ${(props) => props.padding};
 	${(props) =>
 		props.kind === 'FR'
 			? `justify-content:${props.position}; align-items:center;`
