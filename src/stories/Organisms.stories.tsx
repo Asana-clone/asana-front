@@ -1,3 +1,4 @@
+import GlobalNav from '../components/UI/organisms/GlobalNav';
 import ProjectNav from '../components/UI/organisms/ProjectNav';
 import OverViewTextCard from '../components/UI/organisms/OverViewTextCard';
 import OverViewPR from '../components/UI/organisms/OverViewPR';
@@ -19,3 +20,6 @@ export const overViewTextCard = () => {
 export const overViewPR = () => {
 	return <OverViewPR />;
 }
+export const globalNav = () => {
+	return <GlobalNav />;
+};
