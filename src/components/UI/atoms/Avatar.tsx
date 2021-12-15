@@ -15,6 +15,8 @@ const Avatar: React.FC<AvatarProps> = (props) => {
 	);
 };
 
+
+
 Avatar.defaultProps = {
 	nickname: 'kyuung',
 	color: '#DDA211',

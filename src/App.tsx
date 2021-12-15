@@ -14,11 +14,11 @@ const App = () => {
 				<Suspense fallback={<div>Loading...</div>}>
 				<Routes>
 					<Route path="/" element={<UserHome test={'홈입니다.'}/>}/>
-					<Route path="/Overview" element={<Overview/>}/>
-					<Route path="/Board" element={<Board/>}/>
-					<Route path="/Calendar" element={<Calendar/>}/>
-					<Route path="/Dashboard" element={<Dashboard/>}/>
-					<Route path="/List" element={<List/>}/>
+					<Route path="/overview" element={<Overview/>}/>
+					<Route path="/board" element={<Board/>}/>
+					<Route path="/calendar" element={<Calendar/>}/>
+					<Route path="/dashboard" element={<Dashboard/>}/>
+					<Route path="/list" element={<List/>}/>
 				</Routes>
 				</Suspense>
 		</BrowserRouter>
