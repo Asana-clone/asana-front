@@ -91,7 +91,38 @@
 			"setIdx": 7,
 			"setId": 1,
 			"iconIdx": 323
-		}
+		},
+		{
+		"icon":{
+			"paths":[
+			"M810 554h-256v256h-84v-256h-256v-84h256v-256h84v256h256v84z"
+			],
+			"attrs":[
+			{
+			}
+			],
+			"isMulticolor":false,
+			"isMulticolor2":false,
+			"tags":[
+			"add"
+			],
+			"grid":24
+			},
+			"attrs":[
+			{
+			}
+			],
+			"properties":{
+			"order":1,
+			"id":0,
+			"prevSize":24,
+			"code":59648,
+			"name":"add"
+			},
+			"setIdx":0,
+			"setId":2,
+			"iconIdx":0
+			}
 	],
 	"height": 1024,
 	"metadata": { "name": "icomoon" },

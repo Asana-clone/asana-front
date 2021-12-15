@@ -1,5 +1,5 @@
 import React from 'react';
-import Grid from '../atoms/GridTest';
+import Grid from '../atoms/Grid';
 import Icon from '../atoms/Icon/Icon';
 import Text from '../atoms/Text';
 
