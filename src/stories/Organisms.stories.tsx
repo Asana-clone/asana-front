@@ -1,4 +1,6 @@
 import ProjectNav from '../components/UI/organisms/ProjectNav';
+import OverViewTextCard from '../components/UI/organisms/OverViewTextCard';
+
 
 export default {
 	title: 'Organisms',
@@ -8,3 +10,7 @@ export default {
 export const projectNav = () => {
 	return <ProjectNav />;
 };
+
+export const overViewTextCard = () => {
+	return <OverViewTextCard />;
+}

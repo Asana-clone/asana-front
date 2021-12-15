@@ -19,7 +19,7 @@ const ProjectNav: React.FC<ProjectNavProps> = () => {
 
 	return (
 		<>
-			<ActiveLineTab onClick={handleClick} active={active} />
+			<ActiveLineTab text="Overview" onClick={handleClick} active={active} />
 			<ActiveLineTab text="List" onClick={handleClick} active={active} />
 			<ActiveLineTab text="Board" onClick={handleClick} active={active} />
 			<ActiveLineTab text="Calendar" onClick={handleClick} active={active} />
