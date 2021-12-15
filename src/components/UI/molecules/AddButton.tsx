@@ -10,7 +10,7 @@ const AddButton: React.FC = () => {
 			<Dotradius>
 				<Icon color="#707272" size="24px" icon="add" />
 			</Dotradius>
-			<Text>Add member</Text>
+			<Text>Add member </Text>
 		</Grid>
 	);
 };
