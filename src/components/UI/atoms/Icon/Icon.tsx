@@ -9,11 +9,7 @@ interface IconProps {
 }
 
 const Icon: React.FC<IconProps> = ({ color, size, icon }) => {
-	return (
-		<div>
-			<IcomoonReact iconSet={iconSet} color={color} size={size} icon={icon} />
-		</div>
-	);
+	return <IcomoonReact iconSet={iconSet} color={color} size={size} icon={icon} />;
 };
 
 export default Icon;

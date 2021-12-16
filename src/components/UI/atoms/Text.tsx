@@ -6,6 +6,7 @@ interface TextProps {
 	size?: string;
 	weight?: string;
 	align?: 'left' | 'right' | 'center';
+	width?: string;
 }
 
 const Text: React.FC<TextProps> = ({ children, ...props }) => {
@@ -24,6 +25,7 @@ Text.defaultProps = {
 };
 
 const TextStyle = styled('span')<TextProps>`
+	${(props) => props.width && `width: ${props.width}`};
 	color: ${(props) => props.color};
 	font-size: ${(props) => props.size};
 	font-weight: ${(props) => props.weight};
