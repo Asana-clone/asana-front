@@ -1,9 +1,12 @@
 import React from 'react'
 import Text from '../atoms/Text';
+import Grid from '../atoms/Grid';
 
 const OverViewPR: React.FC = () => {
   return (
-    <>
+    <Grid
+      kind="FC"
+    >
       <p>
         <Text
           size={"20px"}
@@ -12,8 +15,18 @@ const OverViewPR: React.FC = () => {
           Project roles
         </Text>
       </p>
-    </>
+      <Grid
+        position='start'
+      >
+        <div>영역1</div>
+        <div>영역2</div>
+      </Grid>
+    </Grid>
   )
 }
+
+
+
+
 
 export default OverViewPR

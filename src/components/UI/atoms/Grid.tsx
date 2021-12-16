@@ -26,9 +26,9 @@ Grid.defaultProps = {
 	_onClick: () => {},
 	background: '#fff',
 	kind: 'FR',
-	position: 'start',
 	margin: '0 0 0 0',
 	padding: '0 0 0 0',
+	position: 'start',
 };
 
 const Container = styled.div<Props>`
