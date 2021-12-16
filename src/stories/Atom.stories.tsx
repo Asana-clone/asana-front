@@ -2,6 +2,7 @@ import Avatar from '../components/UI/atoms/Avatar';
 import Text from '../components/UI/atoms/Text';
 import Grid from '../components/UI/atoms/Grid';
 import ProjectAvatar from '../components/UI/atoms/ProjectAvatar';
+import InputFocus from '../components/UI/atoms/InputFocus';
 
 export default {
 	title: 'Atom',
@@ -28,4 +29,8 @@ export const text = () => {
 
 export const projectAvatar = () => {
 	return <ProjectAvatar onClick={() => {}} />;
+};
+
+export const inputFocus = () => {
+	return <InputFocus />;
 };
