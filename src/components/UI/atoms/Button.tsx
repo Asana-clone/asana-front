@@ -1,16 +1,24 @@
 import React from 'react';
+import styled from '@emotion/styled';
 
 interface ButtonProps {
-	text: string;
+	onClick: () => void;
 }
 
-const Button: React.FC<ButtonProps> = (props) => {
-	const { text } = props;
+const Button: React.FC<ButtonProps> = ({ children, onClick }) => {
+	const HandleClick = (): void => onClick();
 	return (
-		<div>
-			<button>{text}</button>
-		</div>
+		<>
+			<ButtonEl onClick={HandleClick}>{children}</ButtonEl>
+		</>
 	);
 };
+
+const ButtonEl = styled('button')`
+	width: 2rem;
+	height: 2rem;
+	border: 1px black dashed;
+	border-radius: 2rem;
+`;
 
 export default Button;

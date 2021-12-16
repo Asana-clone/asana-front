@@ -1,6 +1,6 @@
-import React from 'react';
 import NavMenu from '../components/UI/molecules/NavMenu';
 import AddButton from '../components/UI/molecules/AddButton';
+import BoardCard from '../components/UI/molecules/BoardCard';
 
 export default {
 	title: 'Molecules',
@@ -8,9 +8,18 @@ export default {
 };
 
 export const navMenu = () => {
-	return <NavMenu menu={'nav-home'}/>;
+	return <NavMenu menu={'menu'} />;
 };
 
 export const projectNav = () => {
 	return <AddButton />;
+};
+
+export const boardCard = () => {
+	return (
+		<BoardCard
+			desc="아사나아사나아사나아사나아사나아사나아사나아사나아사나아사나아사나아사나아사나아사나아사나아사나아사나아사나아사나아사나아사나아사나아사나아사나아사나아사나아사나아사나아사나아사나아사나아사나아사나아사나아사나아사나아사나아사나아사나아사나아사나아사나아사나아사나아사나아사나아사나아사나아사나아사나아사나아사나아사나아사나아사나아사나아사나아사나아사나아사나아사나아사나아사나아사나아사나아사나아사나아사나아사나아사나아사나아사나아사나아사나아사나아사나아사나"
+			isComplete={false}
+		/>
+	);
 };
