@@ -26,7 +26,7 @@ Grid.defaultProps = {
 	_onClick: () => {},
 	background: '#fff',
 	kind: 'FR',
-	position: 'center',
+	position: 'start',
 	margin: '0 0 0 0',
 	padding: '0 0 0 0',
 };

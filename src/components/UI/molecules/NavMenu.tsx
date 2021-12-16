@@ -17,7 +17,7 @@ const NavMenu: React.FC<NavMenuProps> = ({ menu, fontSize, children }) => {
 				height="2rem"
 				background="#424244"
 				position="space-between"
-				margin="0.25rem 0"
+				margin="0.5rem 0"
 			>
 				{children}
 				<Text color="white" align="left" width="4rem" size={fontSize}>
