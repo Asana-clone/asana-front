@@ -11,7 +11,7 @@ export const navMenu = () => {
 	return <NavMenu menu={'menu'} />;
 };
 
-export const projectNav = () => {
+export const addButton = () => {
 	return <AddButton />;
 };
 

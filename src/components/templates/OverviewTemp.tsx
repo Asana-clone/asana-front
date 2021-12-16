@@ -1,14 +1,14 @@
 import React from 'react';
 import ProjectNav from '../UI/organisms/ProjectNav';
-import OverviewPR from '../UI/organisms/OverViewPR';
 import OverViewTextCard from '../UI/organisms/OverViewTextCard';
+import OverviewPR from '../UI/organisms/OverViewPR';
 
 const OverviewTemp = () => {
 	return (
 		<>
 			<ProjectNav />
-			<OverviewPR />
 			<OverViewTextCard />
+			<OverviewPR />
 		</>
 	);
 };
