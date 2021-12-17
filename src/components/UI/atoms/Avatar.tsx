@@ -2,29 +2,31 @@ import React from 'react';
 import styled from '@emotion/styled';
 
 interface AvatarProps {
-	nickname: string;
 	color: string;
+	size?: string;
+	children: string;
 }
 
-const Avatar: React.FC<AvatarProps> = (props) => {
-	const { nickname, color } = props;
+const Avatar: React.FC<AvatarProps> = ({ children, color, size }) => {
+	const nickname = children.slice(0, 2);
 	return (
 		<>
-			<AvatarCircle color={color}>{nickname.slice(0, 2)}</AvatarCircle>
+			<AvatarCircle color={color} size={size}>
+				{nickname}
+			</AvatarCircle>
 		</>
 	);
 };
 
-
-
 Avatar.defaultProps = {
-	nickname: 'kyuung',
+	children: 'kyuung',
 	color: '#DDA211',
+	size: '36px',
 };
 
-const AvatarCircle = styled('div')`
-	width: 36px;
-	height: 36px;
+const AvatarCircle = styled('div')<AvatarProps>`
+	width: ${(props) => props.size};
+	height: ${(props) => props.size};
 	display: flex;
 	justify-content: center;
 	align-items: center;
