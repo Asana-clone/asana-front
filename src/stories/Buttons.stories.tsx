@@ -8,5 +8,9 @@ export default {
 };
 
 export const button = () => {
-	return <Button text={'버튼'} />;
+	return (
+		<Button size="15px" onClick={() => {}}>
+			버튼
+		</Button>
+	);
 };

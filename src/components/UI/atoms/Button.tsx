@@ -2,25 +2,29 @@ import React from 'react';
 import styled from '@emotion/styled';
 
 interface ButtonProps {
-	//onClick?: () => void;
-	text?: string;
-	_onClick?: any;
+	onClick: () => void;
+	size: string;
 }
 
-const Button: React.FC<ButtonProps> = ({ children, _onClick }) => {
-	//const HandleClick = (): void => onClick();
+const Button: React.FC<ButtonProps> = ({ children, onClick, size }) => {
+	const HandleClick = (): void => onClick();
 	return (
 		<>
-			<ButtonEl onClick={_onClick}>{children}</ButtonEl>
+			<ButtonEl onClick={HandleClick} size={size}>
+				{children}
+			</ButtonEl>
 		</>
 	);
 };
 
-const ButtonEl = styled('button')`
-	width: 2rem;
-	height: 2rem;
+const ButtonEl = styled('button')<ButtonProps>`
+	width: ${({ size }) => size};
+	height: ${({ size }) => size};
 	border: 1px black dashed;
 	border-radius: 2rem;
+	display: flex;
+	justify-content: center;
+	align-items: center;
 `;
 
 export default Button;

@@ -1,42 +1,58 @@
-import React from 'react';
+import React, { useState } from 'react';
 import styled from '@emotion/styled';
 import Grid from '../atoms/Grid';
-import Icon from '../atoms/Icon/Icon';
+import { BiPlus } from 'react-icons/bi';
 import Text from '../atoms/Text';
 
 interface AddButtonProps {
-	type?: string;
-	text?: string;
+	text: string;
+	isDotradius?: boolean;
 }
 
-const AddButton: React.FC<AddButtonProps> = ({ type, text }) => {
+const AddButton: React.FC<AddButtonProps> = ({ text, isDotradius }) => {
+	const [background, setBackground] = useState('#ffffff');
+	const [color, setColor] = useState('#6D6E6F');
 	return (
-		<Grid>
-			{type === 'radius' ? (
-				<>
+		<button
+			onMouseEnter={() => {
+				setBackground('#EFEEEE');
+				setColor('black');
+			}}
+			onMouseLeave={() => {
+				setBackground('#ffffff');
+				setColor('#6D6E6F');
+			}}
+			style={{ border: 'none', backgroundColor: background, borderRadius: '0.5rem' }}
+		>
+			<Grid
+				position="center"
+				isCursor={true}
+				background={'inherit'}
+				height="2.5rem"
+				width="15rem"
+			>
+				{isDotradius ? (
 					<Dotradius>
-						<Icon color="#707272" size="24px" icon="add" />
+						<BiPlus size={'1.5rem'} style={{ cursor: 'pointer' }} />
 					</Dotradius>
-					<Text color="#6d6e6f">{text}</Text>
-				</>
-			) : (
-				''
-			)}
-			{type === 'default' ? (
-				<>
-					<Icon color="#707272" size="24px" icon="add" />
-					<Text color="#6d6e6f">{text}</Text>
-				</>
-			) : (
-				''
-			)}
-		</Grid>
+				) : (
+					<BiPlus
+						color={color}
+						size={'1.5rem'}
+						style={{ cursor: 'pointer', marginRight: '0.5rem' }}
+					/>
+				)}
+				<Text weight="500" color={color}>
+					{text}
+				</Text>
+			</Grid>
+		</button>
 	);
 };
 
 AddButton.defaultProps = {
-	text: 'Add Member',
-	type: 'default',
+	text: 'Add some..',
+	isDotradius: false,
 };
 
 const Dotradius = styled.div`
@@ -47,7 +63,7 @@ const Dotradius = styled.div`
 	height: 35px;
 	border: 1px dashed #6d6e6f;
 	border-radius: 50%;
-	margin-right: 10px;
+	margin-right: 0.5rem;
 `;
 
 export default AddButton;
