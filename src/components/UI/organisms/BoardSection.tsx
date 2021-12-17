@@ -9,7 +9,7 @@ interface BoardSectionProps {
 
 const BoardSection: React.FC<BoardSectionProps> = () => {
 	let descArray: BoardSectionProps;
-	descArray = ['card1', 'card2', 'card3', 'card4', 'card5', 'card6'];
+
 	return (
 		<Container>
 			<BoardSectionTitle />
