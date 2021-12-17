@@ -12,8 +12,7 @@ const OverViewPR: React.FC = () => {
 				</Text>
 			</p>
 			<Grid position="start">
-				<AddButton />
-				<div>영역2</div>
+				<AddButton type="radius" />
 			</Grid>
 		</Grid>
 	);

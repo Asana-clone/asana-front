@@ -40,10 +40,10 @@ const BoardCard: React.FC<BoardCardProps> = ({ desc, isComplete, assignee }) => 
 							padding="0 1rem"
 							background="none"
 						>
-							<Button onClick={() => {}}>
+							<Button _onClick={() => {}}>
 								<AiOutlineUser size="18px" />
 							</Button>
-							<Button onClick={() => {}}>
+							<Button _onClick={() => {}}>
 								<AiTwotoneCalendar size="18px" />
 							</Button>
 						</Grid>

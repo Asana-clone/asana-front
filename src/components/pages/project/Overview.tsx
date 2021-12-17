@@ -6,7 +6,6 @@ interface ProjectHomeProps {
 }
 
 const ProjectHome: React.FC<ProjectHomeProps> = (props) => {
-	const { test } = props;
 	return (
 		<>
 			<OverviewTemp />

@@ -2,14 +2,16 @@ import React from 'react';
 import styled from '@emotion/styled';
 
 interface ButtonProps {
-	onClick: () => void;
+	//onClick?: () => void;
+	text?: string;
+	_onClick?: any;
 }
 
-const Button: React.FC<ButtonProps> = ({ children, onClick }) => {
-	const HandleClick = (): void => onClick();
+const Button: React.FC<ButtonProps> = ({ children, _onClick }) => {
+	//const HandleClick = (): void => onClick();
 	return (
 		<>
-			<ButtonEl onClick={HandleClick}>{children}</ButtonEl>
+			<ButtonEl onClick={_onClick}>{children}</ButtonEl>
 		</>
 	);
 };
