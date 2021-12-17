@@ -1,5 +1,5 @@
 import React from 'react';
-import ProjectNav from '../../UI/organisms/ProjectNav'
+import OverviewTemp from '../../templates/OverviewTemp';
 
 interface ProjectHomeProps {
 	test?: string;
@@ -9,8 +9,7 @@ const ProjectHome: React.FC<ProjectHomeProps> = (props) => {
 	const { test } = props;
 	return (
 		<>
-			<ProjectNav />
-			<p>{test} ProjectHome</p>
+			<OverviewTemp />
 		</>
 	);
 };

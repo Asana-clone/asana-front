@@ -12,7 +12,7 @@ export const navMenu = () => {
 };
 
 export const addButton = () => {
-	return <AddButton text="add!" />;
+return <AddButton text="add!" />;
 };
 
 export const boardCard = () => {
