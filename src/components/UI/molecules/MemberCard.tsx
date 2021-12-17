@@ -8,9 +8,10 @@ import { IoIosArrowDown } from 'react-icons/io';
 interface MemberCardProps {
 	name: string;
 	text: string;
+	color: string;
 }
 
-const MemberCard: React.FC<MemberCardProps> = ({ name, text }) => {
+const MemberCard: React.FC<MemberCardProps> = ({ name, text, color }) => {
 	const [background, setBackground] = useState('#fff');
 	const [isHover, setIsHover] = useState(false);
 	return (
@@ -31,8 +32,8 @@ const MemberCard: React.FC<MemberCardProps> = ({ name, text }) => {
 			}}
 		>
 			<Grid width="15rem" height="2.5rem" background={'inherit'} isCursor>
-				<Avatar color="#DDA211">{name}</Avatar>
-				<Grid kind="FC" margin="0 0 0 .7rem">
+				<Avatar color={color}>{name}</Avatar>
+				<Grid width="10rem" kind="FC" margin="0 0 0 .7rem">
 					<Text size="14px" color="#1E1F21">
 						{name}
 					</Text>
@@ -55,6 +56,7 @@ const MemberCard: React.FC<MemberCardProps> = ({ name, text }) => {
 MemberCard.defaultProps = {
 	name: 'jinsung',
 	text: 'Project Owner',
+	color: '#DDA211',
 };
 
 const ArrowArea = styled.div`

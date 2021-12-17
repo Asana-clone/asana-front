@@ -27,5 +27,5 @@ export const boardCard = () => {
 };
 
 export const memberCard = () => {
-	return <MemberCard />;
+	return <MemberCard name="jinsung" text="Project Owner" color="#DDA211" />;
 };
