@@ -1,6 +1,8 @@
 import React from 'react';
 import Text from '../atoms/Text';
 import Grid from '../atoms/Grid';
+import AddButton from '../molecules/AddButton';
+import MemberCard from '../molecules/MemberCard';
 
 const OverViewPR: React.FC = () => {
 	return (
@@ -11,8 +13,9 @@ const OverViewPR: React.FC = () => {
 				</Text>
 			</p>
 			<Grid position="start">
-				{/* <AddButton /> */}
-				<div>영역2</div>
+			<AddButton text="Add member" isDotradius={true} />
+				<MemberCard name="jinsung" text="Project Owner" color="#DDA211" />
+				<MemberCard name="kyuung" text="+ Add role" color="#fc989a" />
 			</Grid>
 		</Grid>
 	);
