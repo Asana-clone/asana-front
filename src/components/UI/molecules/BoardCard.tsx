@@ -51,7 +51,7 @@ const BoardCard: React.FC<BoardCardProps> = ({ desc, isComplete, assignee }) => 
 						</Grid>
 					</div>
 				)}
-				<div style={{ position: 'absolute', bottom: '0.5rem', left: '1rem' }}>
+				<div style={{ position: 'absolute', bottom: '2.5rem', left: '1rem' }}>
 					{assignee && (
 						<Avatar size="24px" color="yellow">
 							ayuung

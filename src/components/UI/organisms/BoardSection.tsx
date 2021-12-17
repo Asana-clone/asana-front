@@ -3,9 +3,13 @@ import AddButton from '../molecules/AddButton';
 import BoardCard from '../molecules/BoardCard';
 import BoardSectionTitle from '../molecules/BoardSectionTitle';
 
-interface BoardSectionProps {}
+interface BoardSectionProps {
+	[index: number]: string;
+}
 
 const BoardSection: React.FC<BoardSectionProps> = () => {
+	let descArray: BoardSectionProps;
+
 	return (
 		<Container>
 			<BoardSectionTitle />
@@ -29,6 +33,7 @@ const Container = styled.div`
 	justify-content: start;
 	align-itmes: center;
 	max-height: 100vh;
+	margin-right: 1.5rem;
 	overflow-y: scroll;
 `;
 
