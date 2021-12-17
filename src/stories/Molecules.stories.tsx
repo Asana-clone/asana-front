@@ -1,6 +1,7 @@
 import NavMenu from '../components/UI/molecules/NavMenu';
 import AddButton from '../components/UI/molecules/AddButton';
 import BoardCard from '../components/UI/molecules/BoardCard';
+import MemberCard from '../components/UI/molecules/MemberCard';
 
 export default {
 	title: 'Molecules',
@@ -12,7 +13,7 @@ export const navMenu = () => {
 };
 
 export const addButton = () => {
-return <AddButton text="add!" />;
+	return <AddButton text="add!" />;
 };
 
 export const boardCard = () => {
@@ -23,4 +24,8 @@ export const boardCard = () => {
 			assignee="kyuung"
 		/>
 	);
+};
+
+export const memberCard = () => {
+	return <MemberCard />;
 };
