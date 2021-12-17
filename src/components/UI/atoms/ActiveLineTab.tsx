@@ -1,5 +1,6 @@
-import React from 'react';
+import React, { useState } from 'react';
 import styled from '@emotion/styled';
+import Text from './Text';
 
 interface ActiveLineTabProps {
 	active: boolean;
@@ -8,11 +9,17 @@ interface ActiveLineTabProps {
 }
 
 const ActiveLineTab: React.FC<ActiveLineTabProps> = ({ text, active, onClick }) => {
+	const [color, setColor] = useState('#6d6e6f');
 	const HandleClick = (): void => onClick();
 	return (
 		<>
-			<LineTab active={active} onClick={HandleClick}>
-				{text}
+			<LineTab
+				onMouseEnter={() => setColor('black')}
+				onMouseLeave={() => setColor('#6d6e6f')}
+				active={active}
+				onClick={HandleClick}
+			>
+				<Text color={color}>{text}</Text>
 			</LineTab>
 		</>
 	);

@@ -12,6 +12,7 @@ interface Props {
 	margin?: string;
 	padding?: string;
 	isCursor?: boolean;
+	border?: string;
 }
 
 const Grid: React.FC<Props> = ({ _onClick, children, ...props }): React.ReactElement => {
@@ -26,13 +27,13 @@ Grid.defaultProps = {
 	width: '100%',
 	height: '100%',
 	_onClick: () => {},
-	background: '#fff',
 	kind: 'FR',
 	margin: '0 0 0 0',
 	padding: '0 0 0 0',
 	position: 'start',
 	positionSub: 'center',
 	isCursor: false,
+	border: 'none',
 };
 
 const Container = styled.div<Props>`
@@ -43,6 +44,7 @@ const Container = styled.div<Props>`
 	margin: ${(props) => props.margin};
 	padding: ${(props) => props.padding};
 	${(props) => props.isCursor && `cursor:pointer`};
+	border: ${(props) => props.border};
 	${(props) =>
 		props.kind === 'FR'
 			? `justify-content:${props.position}; align-items:${props.positionSub};`

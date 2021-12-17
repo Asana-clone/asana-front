@@ -1,7 +1,6 @@
 import React from 'react';
 import Text from '../atoms/Text';
 import Grid from '../atoms/Grid';
-import AddButton from '../molecules/AddButton';
 
 const OverViewPR: React.FC = () => {
 	return (
@@ -12,7 +11,7 @@ const OverViewPR: React.FC = () => {
 				</Text>
 			</p>
 			<Grid position="start">
-				<AddButton />
+				{/* <AddButton /> */}
 				<div>영역2</div>
 			</Grid>
 		</Grid>
