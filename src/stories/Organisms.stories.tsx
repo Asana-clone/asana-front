@@ -17,9 +17,9 @@ export const overViewTextCard = () => {
 	return <OverViewTextCard />;
 };
 
-export const overViewPR = () => {
-	return <OverViewPR />;
-};
+// export const overViewPR = () => {
+// 	return <OverViewPR />;
+// };
 export const globalNav = () => {
 	return <GlobalNav />;
 };
