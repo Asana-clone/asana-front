@@ -8,8 +8,10 @@ interface Props {
 	background?: string;
 	kind?: 'FR' | 'FC';
 	position?: 'start' | 'center' | 'end' | 'space-between';
+	positionSub?: 'start' | 'center' | 'end' | 'space-between';
 	margin?: string;
 	padding?: string;
+	isCursor?: boolean;
 }
 
 const Grid: React.FC<Props> = ({ _onClick, children, ...props }): React.ReactElement => {
@@ -29,6 +31,8 @@ Grid.defaultProps = {
 	margin: '0 0 0 0',
 	padding: '0 0 0 0',
 	position: 'start',
+	positionSub: 'center',
+	isCursor: false,
 };
 
 const Container = styled.div<Props>`
@@ -38,10 +42,11 @@ const Container = styled.div<Props>`
 	background-color: ${(props) => props.background};
 	margin: ${(props) => props.margin};
 	padding: ${(props) => props.padding};
+	${(props) => props.isCursor && `cursor:pointer`};
 	${(props) =>
 		props.kind === 'FR'
-			? `justify-content:${props.position}; align-items:center;`
-			: `flex-direction:column;justify-content:center; align-items:${props.position};`};
+			? `justify-content:${props.position}; align-items:${props.positionSub};`
+			: `flex-direction:column;justify-content:${props.positionSub}; align-items:${props.position};`};
 `;
 
 export default Grid;

@@ -10,7 +10,7 @@ export default {
 };
 
 export const avatar = () => {
-	return <Avatar nickname={'kyuung'} color={'#Ddf967'} />;
+	return <Avatar color={'#Ddf967'}>kyuung</Avatar>;
 };
 
 export const grid = () => {
