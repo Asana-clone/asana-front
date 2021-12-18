@@ -2,6 +2,7 @@ import NavMenu from '../components/UI/molecules/NavMenu';
 import AddButton from '../components/UI/molecules/AddButton';
 import BoardCard from '../components/UI/molecules/BoardCard';
 import MemberCard from '../components/UI/molecules/MemberCard';
+import ListLow from '../components/UI/molecules/ListRow';
 
 export default {
 	title: 'Molecules',
@@ -28,4 +29,8 @@ export const boardCard = () => {
 
 export const memberCard = () => {
 	return <MemberCard name="jinsung" text="Project Owner" color="#DDA211" />;
+};
+
+export const listLow = () => {
+	return <ListLow title="title" />;
 };

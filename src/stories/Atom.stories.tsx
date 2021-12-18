@@ -3,6 +3,7 @@ import Text from '../components/UI/atoms/Text';
 import Grid from '../components/UI/atoms/Grid';
 import ProjectAvatar from '../components/UI/atoms/ProjectAvatar';
 import InputFocus from '../components/UI/atoms/InputFocus';
+import Progress from '../components/UI/atoms/Progress';
 
 export default {
 	title: 'Atom',
@@ -33,4 +34,8 @@ export const projectAvatar = () => {
 
 export const inputFocus = () => {
 	return <InputFocus />;
+};
+
+export const progress = () => {
+	return <Progress value={60} />;
 };
