@@ -1,7 +1,9 @@
+import React from 'react';
 import styled from '@emotion/styled';
 import AddButton from '../molecules/AddButton';
 import BoardCard from '../molecules/BoardCard';
 import BoardSectionTitle from '../molecules/BoardSectionTitle';
+// import ScrollX from '@/styles/ScrollX';
 
 interface BoardSectionProps {
 	[index: number]: string;
@@ -37,4 +39,4 @@ const Container = styled.div`
 	overflow-y: scroll;
 `;
 
-export default BoardSection;
+export default React.memo(BoardSection);

@@ -6,19 +6,40 @@ import styled from '@emotion/styled';
 interface ProjectNavProps {}
 
 const ProjectNav: React.FC<ProjectNavProps> = () => {
-	const [active, setActive] = useState(false);
-	const handleClick = (): void => {
-		active ? setActive(false) : setActive(true);
-	};
+	const [active, setActive] = useState([true, false, false, false, false]);
+	const [pathName, setPathName] = useState(window.location.pathname);
+	const handleClick = (name: string): void => {};
+
+	React.useEffect(() => {}, [pathName]);
 
 	return (
 		<>
 			<Grid>
-				<ActiveLineTab text="Overview" onClick={handleClick} active={active} />
-				<ActiveLineTab text="List" onClick={handleClick} active={active} />
-				<ActiveLineTab text="Board" onClick={handleClick} active={active} />
-				<ActiveLineTab text="Calendar" onClick={handleClick} active={active} />
-				<ActiveLineTab text="Dashboard" onClick={handleClick} active={active} />
+				<ActiveLineTab
+					text="Overview"
+					onClick={() => handleClick('/overview')}
+					active={active[0]}
+				/>
+				<ActiveLineTab
+					text="List"
+					onClick={() => handleClick('/list')}
+					active={active[1]}
+				/>
+				<ActiveLineTab
+					text="Board"
+					onClick={() => handleClick('/board')}
+					active={active[2]}
+				/>
+				<ActiveLineTab
+					text="Calendar"
+					onClick={() => handleClick('calendar')}
+					active={active[3]}
+				/>
+				<ActiveLineTab
+					text="Dashboard"
+					onClick={() => handleClick('dashboard')}
+					active={active[4]}
+				/>
 			</Grid>
 			<Line />
 		</>
@@ -34,4 +55,4 @@ const Line = styled.hr`
 	margin-bottom: 1rem;
 `;
 
-export default ProjectNav;
+export default React.memo(ProjectNav);
