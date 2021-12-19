@@ -4,6 +4,7 @@ import Grid from '../components/UI/atoms/Grid';
 import ProjectAvatar from '../components/UI/atoms/ProjectAvatar';
 import InputFocus from '../components/UI/atoms/InputFocus';
 import Progress from '../components/UI/atoms/Progress';
+import TextArea from '../components/UI/atoms/TextArea';
 
 export default {
 	title: 'Atom',
@@ -38,4 +39,8 @@ export const inputFocus = () => {
 
 export const progress = () => {
 	return <Progress value={60} />;
+};
+
+export const textArea = () => {
+	return <TextArea placeholder="palceholder!!" />;
 };
