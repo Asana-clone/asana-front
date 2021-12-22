@@ -7,6 +7,7 @@ import { ApolloClient, ApolloProvider, InMemoryCache } from '@apollo/client';
 
 const client = new ApolloClient({
 	cache: new InMemoryCache(),
+	connectToDevTools: true,
 });
 
 ReactDOM.render(
