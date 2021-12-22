@@ -1,6 +1,7 @@
 import React from 'react';
 import { BiChevronDownCircle, BiFilter, BiSort } from 'react-icons/bi';
 import Grid from '../atoms/Grid';
+import Line from '../atoms/Line';
 import BoardFilterButton from '../molecules/BoardFilterButton';
 
 interface BoardFilterProps {
@@ -28,4 +29,4 @@ const BoardFilter: React.FC<BoardFilterProps> = ({ completed }) => {
 	);
 };
 
-export default BoardFilter;
+export default React.memo(BoardFilter);
