@@ -3,7 +3,7 @@ import AddButton from '../components/UI/molecules/AddButton';
 import BoardCard from '../components/UI/molecules/BoardCard';
 import MemberCard from '../components/UI/molecules/MemberCard';
 import ProjectNameBar from '../components/UI/molecules/ProjectNameBar';
-import ListLow from '../components/UI/molecules/ListRow';
+import ListRow from '../components/UI/molecules/ListRow';
 
 export default {
 	title: 'Molecules',
@@ -42,6 +42,6 @@ export const memberCard = () => {
 	return <MemberCard name="jinsung" text="Project Owner" color="#DDA211" />;
 };
 
-export const listLow = () => {
-	return <ListLow title="title" />;
+export const listRow = () => {
+	return <ListRow title="title" value={85} />;
 };

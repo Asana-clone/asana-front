@@ -7,9 +7,10 @@ import { BsTriangle } from 'react-icons/bs';
 
 interface ListRowProps {
 	title: string;
+	value: number;
 }
 
-const ListRow: React.FC<ListRowProps> = ({ title }) => {
+const ListRow: React.FC<ListRowProps> = ({ title, value }) => {
 	return (
 		<Grid>
 			<Grid>
@@ -20,8 +21,8 @@ const ListRow: React.FC<ListRowProps> = ({ title }) => {
 			</Grid>
 			<Grid>
 				<Text>Q4 FY21</Text>
-				<Progress value={90} />
-				<Text>94%</Text>
+				<Progress value={value} />
+				<Text>{value}%</Text>
 			</Grid>
 			<Avatar color="#DDA211">jinsung</Avatar>
 		</Grid>
