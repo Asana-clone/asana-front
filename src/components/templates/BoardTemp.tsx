@@ -20,10 +20,6 @@ const BoardTemp: React.FC<BoardTempProps> = () => {
 				<ProjectNav />
 				<BoardFilter completed={1} />
 				<Container>
-					<BoardSection />
-					<BoardSection />
-					<BoardSection />
-					<BoardSection />
 					<AddButton text="Add section" />
 				</Container>
 			</div>
