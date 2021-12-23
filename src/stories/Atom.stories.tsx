@@ -34,7 +34,7 @@ export const projectAvatar = () => {
 };
 
 export const inputFocus = () => {
-	return <InputFocus />;
+	return <InputFocus sectionName="abc" />;
 };
 
 export const progress = () => {

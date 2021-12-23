@@ -7,6 +7,7 @@ interface TextProps {
 	weight?: string;
 	align?: 'left' | 'right' | 'center';
 	width?: string;
+	margin?: string;
 }
 
 const Text: React.FC<TextProps> = ({ children, ...props }) => {
@@ -22,6 +23,7 @@ Text.defaultProps = {
 	size: '1rem',
 	weight: '400',
 	align: 'left',
+	margin: '0 0 0 0',
 };
 
 const TextStyle = styled('span')<TextProps>`
@@ -29,7 +31,7 @@ const TextStyle = styled('span')<TextProps>`
 	color: ${(props) => props.color};
 	font-size: ${(props) => props.size};
 	font-weight: ${(props) => props.weight};
-	text-align: ${(props) => props.align};
+	margin: ${(props) => props.margin};
 `;
 
 export default Text;

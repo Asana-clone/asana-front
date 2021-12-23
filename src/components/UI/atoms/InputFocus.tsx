@@ -2,11 +2,13 @@ import React, { useState } from 'react';
 import styled from '@emotion/styled';
 import Text from './Text';
 
-interface InputFocusProps {}
+interface Props {
+	sectionName: string;
+}
 
-const InputFocus: React.FC<InputFocusProps> = () => {
+const InputFocus: React.FC<Props> = ({ sectionName }) => {
 	const [click, setClick] = useState(false);
-	const [title, setTitle] = useState('string');
+	const [title, setTitle] = useState(sectionName);
 
 	return (
 		<>

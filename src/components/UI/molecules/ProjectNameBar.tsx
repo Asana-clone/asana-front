@@ -21,8 +21,10 @@ const ProjectNameBar: React.FC<ProjectNameBarProps> = ({ color, name, members })
 					</Text>
 				</Grid>
 				<Grid width="10rem">
-					{members?.map((member) => (
-						<Avatar color="green">{member}</Avatar>
+					{members?.map((member, idx) => (
+						<Avatar key={idx} color="green">
+							{member}
+						</Avatar>
 					))}
 				</Grid>
 			</Grid>

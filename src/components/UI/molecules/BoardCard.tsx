@@ -11,6 +11,7 @@ interface BoardCardProps {
 	desc: string;
 	isComplete: boolean;
 	assignee?: string;
+	id: number;
 }
 
 const BoardCard: React.FC<BoardCardProps> = ({ desc, isComplete, assignee }) => {
