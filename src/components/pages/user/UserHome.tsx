@@ -1,14 +1,17 @@
+/* eslint-disable import/extensions */
 import React from 'react';
+import { useReactiveVar } from '@apollo/client';
+import { isModalVar } from '@/apollo/localStorage';
 
-interface UserHomeProps {
+interface Props {
 	test: string;
 }
 
-const UserHome: React.FC<UserHomeProps> = (props) => {
-	const { test } = props;
+const UserHome: React.FC<Props> = () => {
+	const modalStatus = useReactiveVar(isModalVar);
 	return (
 		<>
-			<p>{test} home</p>
+			<p>{`${modalStatus}`}</p>
 		</>
 	);
 };

@@ -6,20 +6,33 @@ import BoardFilter from '../UI/organisms/BoardFilter';
 import BoardSection from '../UI/organisms/BoardSection';
 import ProjectNav from '../UI/organisms/ProjectNav';
 
-interface BoardTempProps {}
+interface Section {
+	id: number;
+	title: string;
+	tasks: Array<string>;
+}
 
-const BoardTemp: React.FC<BoardTempProps> = () => {
+interface Props {
+	sections: Section[];
+	members: Array<string>;
+}
+
+const BoardTemp: React.FC<Props> = ({ sections, members }) => {
 	return (
 		<>
 			<div>
-				<ProjectNameBar
-					color="yellow"
-					name="clone"
-					members={['kyuung', 'jinsung', 'hwang chang', 'young woo']}
-				/>
+				<ProjectNameBar color="yellow" name="clone" members={members} />
 				<ProjectNav />
 				<BoardFilter completed={1} />
 				<Container>
+					{sections.map((section, idx) => (
+						<BoardSection
+							key={idx}
+							sectionName={section.title}
+							tasks={section.tasks}
+							id={section.id}
+						/>
+					))}
 					<AddButton text="Add section" />
 				</Container>
 			</div>
