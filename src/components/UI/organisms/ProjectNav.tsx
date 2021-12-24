@@ -1,44 +1,71 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import ActiveLineTab from '../atoms/ActiveLineTab';
 import Grid from '../atoms/Grid';
 import styled from '@emotion/styled';
+import { useNavigate } from 'react-router-dom';
 
 interface ProjectNavProps {}
 
 const ProjectNav: React.FC<ProjectNavProps> = () => {
-	const [active, setActive] = useState([true, false, false, false, false]);
-	const [pathName, setPathName] = useState(window.location.pathname);
-	const handleClick = (name: string): void => {};
+	let navigate = useNavigate();
+	const [active, setActive] = useState({
+		overview: false,
+		list: false,
+		board: false,
+		calendar: false,
+		dashboard: false,
+	});
 
-	React.useEffect(() => {}, [pathName]);
+	const getPathName = (): string => {
+		return window.location.pathname;
+	};
+
+	const handleClick = (name: string): void => {
+		navigate(`/${name}`);
+		setActive(() => ({
+			overview: false,
+			list: false,
+			board: false,
+			calendar: false,
+			dashboard: false,
+			[name]: true,
+		}));
+	};
+	useEffect(() => {
+		const pahtName = getPathName().slice(1);
+		setActive((prevState) => ({
+			...prevState,
+			[pahtName]: true,
+		}));
+	}, []);
 
 	return (
 		<>
 			<Grid>
 				<ActiveLineTab
 					text="Overview"
-					onClick={() => handleClick('/overview')}
-					active={active[0]}
+					onClick={() => handleClick('overview')}
+					active={active.overview}
 				/>
 				<ActiveLineTab
 					text="List"
-					onClick={() => handleClick('/list')}
-					active={active[1]}
+					onClick={() => handleClick('list')}
+					active={active.list}
 				/>
 				<ActiveLineTab
 					text="Board"
-					onClick={() => handleClick('/board')}
-					active={active[2]}
+					onClick={() => handleClick('board')}
+					active={active.board}
 				/>
 				<ActiveLineTab
 					text="Calendar"
 					onClick={() => handleClick('calendar')}
-					active={active[3]}
+					active={active.calendar}
 				/>
 				<ActiveLineTab
 					text="Dashboard"
 					onClick={() => handleClick('dashboard')}
-					active={active[4]}
+					active={active.dashboard}
 				/>
 			</Grid>
 			<Line />
