@@ -4,6 +4,8 @@ import BoardCard from '../components/UI/molecules/BoardCard';
 import MemberCard from '../components/UI/molecules/MemberCard';
 import ProjectNameBar from '../components/UI/molecules/ProjectNameBar';
 import ListRow from '../components/UI/molecules/ListRow';
+import Number from '../components/UI/molecules/dashboard/Number';
+import BarGraph from '../components/UI/molecules/dashboard/BarGraph';
 
 export default {
 	title: 'Molecules',
@@ -45,4 +47,12 @@ export const memberCard = () => {
 
 export const listRow = () => {
 	return <ListRow title="title" value={85} />;
+};
+
+export const number = () => {
+	return <Number title="Completed tasks" value="Task count" data={8} />;
+};
+
+export const barGraph = () => {
+	return <BarGraph />;
 };
