@@ -13,6 +13,7 @@ interface Props {
 	padding?: string;
 	isCursor?: boolean;
 	border?: string;
+	isRadius?: boolean;
 	// isScroll?: 'scrollY' | 'scrollX' | false;
 	// isHidden?: 'hiddenY' | 'hiddenX' | false;
 }
@@ -36,6 +37,7 @@ Grid.defaultProps = {
 	positionSub: 'center',
 	isCursor: false,
 	border: 'none',
+	isRadius: false,
 	// isScroll: false,
 	// isHidden: false,
 };
@@ -49,6 +51,7 @@ const Container = styled.div<Props>`
 	padding: ${(props) => props.padding};
 	${(props) => props.isCursor && `cursor:pointer`};
 	border: ${(props) => props.border};
+	${(props) => props.isRadius && `border-radius: 1rem;`}
 	${(props) =>
 		props.kind === 'FR'
 			? `justify-content:${props.position}; align-items:${props.positionSub};`
