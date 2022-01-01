@@ -6,6 +6,7 @@ import ProjectNameBar from '../components/UI/molecules/ProjectNameBar';
 import ListRow from '../components/UI/molecules/ListRow';
 import Number from '../components/UI/molecules/dashboard/Number';
 import BarGraph from '../components/UI/molecules/dashboard/BarGraph';
+import DonutGraph from '../components/UI/molecules/dashboard/DonutGraph';
 
 export default {
 	title: 'Molecules',
@@ -55,4 +56,8 @@ export const number = () => {
 
 export const barGraph = () => {
 	return <BarGraph />;
+};
+
+export const donutGraph = () => {
+	return <DonutGraph />;
 };
