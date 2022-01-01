@@ -44,7 +44,7 @@ const ProjectNav: React.FC<ProjectNavProps> = () => {
 			<Grid>
 				<ActiveLineTab
 					text="Overview"
-					onClick={() => handleClick('overview')}
+					onClick={() => handleClick('overview/1')}
 					active={active.overview}
 				/>
 				<ActiveLineTab

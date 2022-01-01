@@ -2,7 +2,6 @@
 /* eslint-disable import/no-extraneous-dependencies */
 import '@storybook/addon-actions/register';
 import GlobalNav from '../components/UI/organisms/GlobalNav';
-import ProjectNav from '../components/UI/organisms/ProjectNav';
 import OverViewTextCard from '../components/UI/organisms/OverViewTextCard';
 // import OverViewPR from '../components/UI/organisms/OverViewPR';
 import BoardSection from '../components/UI/organisms/BoardSection';
@@ -10,11 +9,7 @@ import UserToolTip from '../components/UI/organisms/UserToolTip';
 
 export default {
 	title: 'Organisms',
-	component: ProjectNav,
-};
-
-export const projectNav = () => {
-	return <ProjectNav />;
+	component: OverViewTextCard,
 };
 
 export const overViewTextCard = () => {
