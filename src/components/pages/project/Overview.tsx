@@ -6,9 +6,10 @@ interface ProjectHomeProps {
 }
 
 const ProjectHome: React.FC<ProjectHomeProps> = (props) => {
+	const members = ['kyuung', 'jinsung', 'hwang chang', 'young woo'];
 	return (
 		<>
-			<OverviewTemp />
+			<OverviewTemp members={members} />
 		</>
 	);
 };
