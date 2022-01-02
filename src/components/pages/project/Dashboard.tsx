@@ -1,14 +1,16 @@
+/* eslint-disable import/extensions */
+import DashboardTemp from '@/components/templates/DashboardTemp';
 import React from 'react';
 
-interface DashboardProps {
+interface Props {
 	test?: string;
 }
 
-const Dashboard: React.FC<DashboardProps> = (props) => {
-	const { test } = props;
+const Dashboard: React.FC<Props> = (props) => {
+	const members = ['kyuung', 'jinsung', 'hwang chang', 'young woo'];
 	return (
 		<>
-			<p>{test} Board</p>
+			<DashboardTemp members={members} />
 		</>
 	);
 };

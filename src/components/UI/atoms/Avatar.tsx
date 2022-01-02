@@ -32,6 +32,7 @@ const AvatarCircle = styled('div')<AvatarProps>`
 	align-items: center;
 	background-color: ${(props) => props.color};
 	border-radius: 36px;
+	cursor: pointer;
 `;
 
 export default Avatar;

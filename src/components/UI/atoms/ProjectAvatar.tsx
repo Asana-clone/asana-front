@@ -1,26 +1,40 @@
 import React from 'react';
 import styled from '@emotion/styled';
+import ProjectToolTip from '../molecules/ProjectToolTip';
+import { useNavigate } from 'react-router-dom';
 
-interface ProjectAvatarProps {
+interface Members {
+	nickName: string;
+	role: string;
+}
+interface Props {
 	background?: string;
 	img?: string;
 	size?: string;
-	onClick: () => void;
+	margin?: string;
+	members: Members[];
 }
 
-const ProjectAvatar: React.FC<ProjectAvatarProps> = ({
-	background,
-	img,
-	size,
-	onClick,
-	children,
-}) => {
-	const HandleClick = (): void => onClick();
+const ProjectAvatar: React.FC<Props> = ({ background, img, size, children, margin, members }) => {
+	const [hoverStatus, setHoverStatus] = React.useState(false);
+	const navigate = useNavigate();
 
 	return (
 		<>
-			<ProjectAvatarEle background={background} img={img} size={size} onClick={HandleClick}>
+			<ProjectAvatarEle
+				background={background}
+				img={img}
+				size={size}
+				margin={margin}
+				onClick={() => {
+					navigate(`/overview/${1}`);
+				}}
+				members={members}
+				onMouseEnter={() => setHoverStatus(true)}
+				onMouseLeave={() => setHoverStatus(false)}
+			>
 				{children}
+				{hoverStatus && <ProjectToolTip members={members} />}
 			</ProjectAvatarEle>
 		</>
 	);
@@ -29,23 +43,21 @@ const ProjectAvatar: React.FC<ProjectAvatarProps> = ({
 ProjectAvatar.defaultProps = {
 	background: '#bb0012',
 	img: 'https://image-upload-mingizuk.s3.ap-northeast-2.amazonaws.com/0515_1_sli2.jpeg',
-	onClick: () => {},
 	size: '5rem',
 };
 
-const ProjectAvatarEle = styled('button')<ProjectAvatarProps>`
+const ProjectAvatarEle = styled('button')<Props>`
 	display: flex;
 	justify-content: center;
 	align-items: center;
 	width: ${(props) => props.size};
 	height: ${(props) => props.size};
 	background-color: ${(props) => props.background};
+	margin: ${(props) => props.margin && `0 ${props.margin}`};
 	border: none;
 	border-radius: 1rem;
 	cursor: pointer;
-	&:hover {
-		opacity: 70%;
-	}
+	position: relative;
 `;
 
 export default ProjectAvatar;

@@ -5,10 +5,12 @@ import Text from '../atoms/Text';
 interface NavMenuProps {
 	menu: string;
 	fontSize?: string;
+	onClick: () => void;
+	margin?: string;
 }
 
-const NavMenu: React.FC<NavMenuProps> = ({ menu, fontSize, children }) => {
-	const goToPage = () => {};
+const NavMenu: React.FC<NavMenuProps> = ({ menu, fontSize, onClick, children, margin }) => {
+	const goToPage = (): void => onClick();
 
 	return (
 		<div onClick={goToPage} style={{ cursor: 'pointer' }}>
@@ -17,7 +19,7 @@ const NavMenu: React.FC<NavMenuProps> = ({ menu, fontSize, children }) => {
 				height="2rem"
 				background="#424244"
 				position="space-between"
-				margin="0.3rem 0"
+				margin={margin}
 			>
 				{children}
 				<Text color="white" align="left" width="4rem" size={fontSize}>
@@ -26,6 +28,10 @@ const NavMenu: React.FC<NavMenuProps> = ({ menu, fontSize, children }) => {
 			</Grid>
 		</div>
 	);
+};
+
+NavMenu.defaultProps = {
+	margin: '0.3rem 0',
 };
 
 export default NavMenu;

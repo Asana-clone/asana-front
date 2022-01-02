@@ -16,8 +16,8 @@ const App = () => {
 				<GlobalNav />
 				<div style={{ marginLeft: '270px' }}>
 					<Routes>
-						<Route path="/" element={<UserHome test={'홈입니다.'} />} />
-						<Route path="/overview" element={<Overview />} />
+						<Route path="/" element={<UserHome />} />
+						<Route path="/overview/:id" element={<Overview />} />
 						<Route path="/board" element={<Board />} />
 						<Route path="/calendar" element={<Calendar />} />
 						<Route path="/dashboard" element={<Dashboard />} />

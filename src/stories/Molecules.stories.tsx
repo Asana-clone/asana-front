@@ -6,14 +6,12 @@ import ProjectNameBar from '../components/UI/molecules/ProjectNameBar';
 import ListRow from '../components/UI/molecules/ListRow';
 import Number from '../components/UI/molecules/dashboard/Number';
 import BarGraph from '../components/UI/molecules/dashboard/BarGraph';
+import DonutGraph from '../components/UI/molecules/dashboard/DonutGraph';
+import ProjectToolTip from '../components/UI/molecules/ProjectToolTip';
 
 export default {
 	title: 'Molecules',
 	component: NavMenu,
-};
-
-export const navMenu = () => {
-	return <NavMenu menu={'menu'} />;
 };
 
 export const addButton = () => {
@@ -55,4 +53,21 @@ export const number = () => {
 
 export const barGraph = () => {
 	return <BarGraph />;
+};
+
+export const donutGraph = () => {
+	return <DonutGraph />;
+};
+
+export const projectToolTip = () => {
+	return (
+		<ProjectToolTip
+			members={[
+				{ nickName: 'KY', role: 'FEFEFE' },
+				{ nickName: 'JS', role: 'FEFEFE' },
+				{ nickName: 'HC', role: 'BE' },
+				{ nickName: 'YW', role: 'BE' },
+			]}
+		/>
+	);
 };

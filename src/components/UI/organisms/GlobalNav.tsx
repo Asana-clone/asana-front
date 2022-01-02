@@ -12,10 +12,12 @@ import {
 	FiSquare,
 } from 'react-icons/fi';
 import { SiAsana } from 'react-icons/si';
+import { useNavigate } from 'react-router-dom';
 
 interface GlobalNavProps {}
 
 const GlobalNav: React.FC<GlobalNavProps> = () => {
+	const navigate = useNavigate();
 	return (
 		<>
 			<div style={{ position: 'fixed' }}>
@@ -25,47 +27,77 @@ const GlobalNav: React.FC<GlobalNavProps> = () => {
 					kind="FC"
 					background="#424244"
 					padding="1rem 1rem"
+					position="start"
+					positionSub="start"
 				>
-					<NavMenu menu={'asana'} fontSize="1.4rem">
+					<NavMenu
+						onClick={() => {
+							navigate('/');
+						}}
+						menu={'asana'}
+						fontSize="1.4rem"
+						margin="1rem 0.3rem 3rem 0.3rem"
+					>
 						<SiAsana size={'24px'} color="red" />
 					</NavMenu>
-					<Grid background="inherit" kind="FC">
-						<NavMenu menu={'Home'}>
-							<FiHome size={'20px'} color="white" />
-						</NavMenu>
-						<NavMenu menu={'Tasks'}>
-							<FiCheckCircle size={'20px'} color="white" />
-						</NavMenu>
-						<NavMenu menu={'Inbox'}>
-							<FiBell size={'20px'} color="white" />
-						</NavMenu>
-						<NavMenu menu={'Reporting'}>
-							<FiGitPullRequest size={'20px'} color="white" />
-						</NavMenu>
-						<NavMenu menu={'Portfolios'}>
-							<FiTrello size={'20px'} color="white" />
-						</NavMenu>
-						<NavMenu menu={'Goals'}>
-							<FiTarget size={'20px'} color="white" />
-						</NavMenu>
-					</Grid>
-					<Line />
-					<Grid background="inherit" kind="FC">
-						<Grid kind="FC" background="#424244">
-							<NavMenu menu={'project1'}>
-								<FiSquare size={'16px'} color="yellow" />
-							</NavMenu>
-							<NavMenu menu={'project2'}>
-								<FiSquare size={'16px'} color="blue" />
-							</NavMenu>
-							<NavMenu menu={'project3'}>
-								<FiSquare size={'16px'} color="red" />
-							</NavMenu>
-							<NavMenu menu={'project4'}>
-								<FiSquare size={'16px'} color="white" />
-							</NavMenu>
-						</Grid>
-					</Grid>
+
+					<NavMenu
+						onClick={() => {
+							navigate('/');
+						}}
+						menu={'Home'}
+					>
+						<FiHome size={'20px'} color="white" />
+					</NavMenu>
+					<NavMenu
+						onClick={() => {
+							navigate('/');
+						}}
+						menu={'Tasks'}
+					>
+						<FiCheckCircle size={'20px'} color="white" />
+					</NavMenu>
+					<NavMenu
+						onClick={() => {
+							navigate('/');
+						}}
+						menu={'Inbox'}
+					>
+						<FiBell size={'20px'} color="white" />
+					</NavMenu>
+					<NavMenu
+						onClick={() => {
+							navigate('/');
+						}}
+						menu={'Reporting'}
+					>
+						<FiGitPullRequest size={'20px'} color="white" />
+					</NavMenu>
+					<NavMenu
+						onClick={() => {
+							navigate('/');
+						}}
+						menu={'Portfolios'}
+					>
+						<FiTrello size={'20px'} color="white" />
+					</NavMenu>
+					<NavMenu
+						onClick={() => {
+							navigate('/');
+						}}
+						menu={'Goals'}
+					>
+						<FiTarget size={'20px'} color="white" />
+					</NavMenu>
+					<NavMenu
+						onClick={() => {
+							navigate('/overview/1');
+						}}
+						menu={'project1'}
+						margin="5rem 0.3rem 3rem 0.1rem"
+					>
+						<FiSquare size={'16px'} color="yellow" />
+					</NavMenu>
 				</Grid>
 			</div>
 		</>

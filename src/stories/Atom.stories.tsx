@@ -5,6 +5,7 @@ import ProjectAvatar from '../components/UI/atoms/ProjectAvatar';
 import InputFocus from '../components/UI/atoms/InputFocus';
 import Progress from '../components/UI/atoms/Progress';
 import TextArea from '../components/UI/atoms/TextArea';
+import Line from '../components/UI/atoms/Line';
 
 export default {
 	title: 'Atom',
@@ -30,7 +31,7 @@ export const text = () => {
 };
 
 export const projectAvatar = () => {
-	return <ProjectAvatar onClick={() => {}} />;
+	return <ProjectAvatar members={[{ nickName: 'k1', role: 'FE' }]} />;
 };
 
 export const inputFocus = () => {
@@ -43,4 +44,8 @@ export const progress = () => {
 
 export const textArea = () => {
 	return <TextArea placeholder="palceholder!!" />;
+};
+
+export const line = () => {
+	return <Line />;
 };

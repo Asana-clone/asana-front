@@ -32,6 +32,7 @@ const TextStyle = styled('span')<TextProps>`
 	font-size: ${(props) => props.size};
 	font-weight: ${(props) => props.weight};
 	margin: ${(props) => props.margin};
+	display: block;
 `;
 
 export default Text;
