@@ -29,7 +29,7 @@ const UserHomeTemp: React.FC<Props> = ({ projects }) => {
 				<Line size="2px" width="40rem" />
 				<Grid width="40rem" position="start">
 					{projects.map((project) => (
-						<ProjectAvatar members={project.members} margin="1.5rem">
+						<ProjectAvatar isTooltip={true} members={project.members} margin="1.5rem">
 							{project.name.slice(0, 2)}
 						</ProjectAvatar>
 					))}

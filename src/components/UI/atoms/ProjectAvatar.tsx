@@ -13,9 +13,18 @@ interface Props {
 	size?: string;
 	margin?: string;
 	members: Members[];
+	isTooltip?: boolean;
 }
 
-const ProjectAvatar: React.FC<Props> = ({ background, img, size, children, margin, members }) => {
+const ProjectAvatar: React.FC<Props> = ({
+	background,
+	img,
+	size,
+	children,
+	margin,
+	members,
+	isTooltip,
+}) => {
 	const [hoverStatus, setHoverStatus] = React.useState(false);
 	const navigate = useNavigate();
 
@@ -34,7 +43,7 @@ const ProjectAvatar: React.FC<Props> = ({ background, img, size, children, margi
 				onMouseLeave={() => setHoverStatus(false)}
 			>
 				{children}
-				{hoverStatus && <ProjectToolTip members={members} />}
+				{isTooltip && hoverStatus && <ProjectToolTip members={members} />}
 			</ProjectAvatarEle>
 		</>
 	);
@@ -44,6 +53,7 @@ ProjectAvatar.defaultProps = {
 	background: '#bb0012',
 	img: 'https://image-upload-mingizuk.s3.ap-northeast-2.amazonaws.com/0515_1_sli2.jpeg',
 	size: '5rem',
+	isTooltip: false,
 };
 
 const ProjectAvatarEle = styled('button')<Props>`

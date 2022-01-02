@@ -33,7 +33,10 @@ const InputFocus: React.FC<Props> = ({ sectionName }) => {
 const Input = styled('input')`
 	width: 12rem;
 	height: 1.5rem;
+	padding: 0.3rem;
 	font-size: 1.5rem;
+	border: 1px solid lightgray;
+	border-radius: 0.5rem;
 `;
 
 export default InputFocus;

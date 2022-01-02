@@ -33,7 +33,7 @@ const BoardTemp: React.FC<Props> = ({ sections, members }) => {
 							id={section.id}
 						/>
 					))}
-					<AddButton text="Add section" />
+					<AddButton onClick={() => {}} text="Add section" />
 				</Container>
 			</div>
 		</>

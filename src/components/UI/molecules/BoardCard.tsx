@@ -8,22 +8,31 @@ import Grid from '../atoms/Grid';
 import Avatar from '../atoms/Avatar';
 
 interface BoardCardProps {
-	desc: string;
-	isComplete: boolean;
+	desc?: string;
+	isComplete?: boolean;
 	assignee?: string;
-	id: number;
+	id?: number;
+	isInput?: boolean;
 }
 
-const BoardCard: React.FC<BoardCardProps> = ({ desc, isComplete, assignee }) => {
+const BoardCard: React.FC<BoardCardProps> = ({ desc, isComplete, assignee, isInput }) => {
 	const [complete, setComplete] = useState(isComplete);
 	const [hover, setHover] = useState(false);
+
+	const [click, setClick] = useState(false);
+	const [content, setContent] = useState(desc);
+
 	const changeStatus = () => {
 		complete ? setComplete(false) : setComplete(true);
 	};
 
 	return (
 		<>
-			<BoardBox onMouseEnter={() => setHover(true)} onMouseLeave={() => setHover(false)}>
+			<BoardBox
+				onClick={() => isInput && setClick(true)}
+				onMouseEnter={() => setHover(true)}
+				onMouseLeave={() => setHover(false)}
+			>
 				{complete ? (
 					<div onClick={changeStatus} style={{ marginRight: '0.5rem', height: '1rem' }}>
 						<AiFillDownCircle size="22px" color="green" />
@@ -33,8 +42,8 @@ const BoardCard: React.FC<BoardCardProps> = ({ desc, isComplete, assignee }) => 
 						<AiFillDownCircle size="22px" color="gray" />
 					</div>
 				)}
-				<Text>{desc}</Text>
-				{hover && (
+				{isInput ? <Input placeholder="Write a taskname" /> : <Text>{content}</Text>}
+				{!isInput && hover && (
 					<div style={{ position: 'absolute', bottom: '0.5rem', left: '1rem' }}>
 						<Grid
 							width="1rem"
@@ -79,6 +88,17 @@ const BoardBox = styled('article')`
 	cursor: pointer;
 	overflow-y: hidden;
 	margin-bottom: 1rem;
+`;
+
+const Input = styled('textarea')`
+	width: 12rem;
+	min-height: 5rem;
+	max-height: 6.5rem;
+	resize: none;
+	line-height: 1.5;
+	&:focus {
+		outline: none;
+	}
 `;
 
 export default BoardCard;

@@ -24,8 +24,8 @@ const ProjectToolTip: React.FC<Props> = ({ members }) => {
 					padding="1rem"
 					margin="0.1rem 0"
 				>
-					{members.map((member) => (
-						<Grid width="inherit" position="space-between">
+					{members.map((member, idx) => (
+						<Grid key={idx} width="inherit" position="space-between">
 							<Text size="1.2rem" weight="600" margin="0.5rem 1rem 0.5rem 0">
 								{member.nickName}
 							</Text>

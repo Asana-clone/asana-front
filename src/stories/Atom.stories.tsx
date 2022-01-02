@@ -1,11 +1,11 @@
 import Avatar from '../components/UI/atoms/Avatar';
 import Text from '../components/UI/atoms/Text';
 import Grid from '../components/UI/atoms/Grid';
-import ProjectAvatar from '../components/UI/atoms/ProjectAvatar';
 import InputFocus from '../components/UI/atoms/InputFocus';
 import Progress from '../components/UI/atoms/Progress';
 import TextArea from '../components/UI/atoms/TextArea';
 import Line from '../components/UI/atoms/Line';
+import Icons from '../components/UI/atoms/Icons';
 
 export default {
 	title: 'Atom',
@@ -30,10 +30,6 @@ export const text = () => {
 	return <Text align="left">ddddd</Text>;
 };
 
-export const projectAvatar = () => {
-	return <ProjectAvatar members={[{ nickName: 'k1', role: 'FE' }]} />;
-};
-
 export const inputFocus = () => {
 	return <InputFocus sectionName="abc" />;
 };
@@ -48,4 +44,8 @@ export const textArea = () => {
 
 export const line = () => {
 	return <Line />;
+};
+
+export const icons = () => {
+	return <Icons color="black" typeName="plus" />;
 };

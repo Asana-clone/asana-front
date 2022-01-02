@@ -5,16 +5,25 @@ import { BiDotsHorizontalRounded, BiPlus } from 'react-icons/bi';
 
 interface Props {
 	sectionName: string;
+	onClickPlus: () => void;
+	onClickDots: () => void;
 }
 
-const BoardSectionTitle: React.FC<Props> = ({ sectionName }) => {
+const BoardSectionTitle: React.FC<Props> = ({ sectionName, onClickPlus, onClickDots }) => {
+	const handlePlusBtn = (): void => onClickPlus();
+	const handleDotBtn = (): void => onClickDots();
+
 	return (
 		<>
 			<Grid position="space-between" width="17rem">
 				<InputFocus sectionName={`${sectionName}`} />
 				<Grid width="3.8rem" position="space-between">
-					<BiPlus size={'1.5rem'} style={{ cursor: 'pointer' }} />
-					<BiDotsHorizontalRounded style={{ cursor: 'pointer' }} size={'1.5rem'} />
+					<BiPlus onClick={handlePlusBtn} size={'1.5rem'} style={{ cursor: 'pointer' }} />
+					<BiDotsHorizontalRounded
+						onClick={handleDotBtn}
+						style={{ cursor: 'pointer' }}
+						size={'1.5rem'}
+					/>
 				</Grid>
 			</Grid>
 		</>
