@@ -12,21 +12,22 @@ const OptionModal: React.FC<Props> = ({ isModal }) => {
 			{isModal && (
 				<Grid kind="FC" position="start" width="16rem">
 					<AddButton
-						iconType="plus"
+						iconType="rename"
 						text="Rename section"
 						position="start"
 						onClick={() => {}}
 					/>
 					<AddButton
-						iconType="plus"
+						iconType="addSection"
 						text="Add section"
 						position="start"
 						onClick={() => {}}
 					/>
 					<AddButton
-						iconType="plus"
+						iconType="delete"
 						text="Delete section"
 						position="start"
+						lineColor="red"
 						onClick={() => {}}
 					/>
 				</Grid>
