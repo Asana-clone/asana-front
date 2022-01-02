@@ -12,14 +12,20 @@ interface Props {
 
 const BoardSection: React.FC<Props> = ({ tasks, sectionName, id }) => {
 	const [cardDesc, setCardDesc] = useState(tasks);
+	const [isBlank, setIsBlank] = useState(false);
 
 	return (
 		<Container>
-			<BoardSectionTitle sectionName={sectionName} />
+			<BoardSectionTitle
+				onClickPlus={() => setIsBlank(!isBlank)}
+				onClickDots={() => {}}
+				sectionName={sectionName}
+			/>
 			{cardDesc.map((desc, idx) => (
 				<BoardCard id={id} key={idx} desc={`${desc}`} isComplete={false} />
 			))}
-			<AddButton text="Add Task" />
+			{isBlank && <BoardCard isInput={true} />}
+			<AddButton onClick={() => setIsBlank(!isBlank)} text="Add Task" />
 		</Container>
 	);
 };

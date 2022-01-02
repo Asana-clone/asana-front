@@ -8,6 +8,7 @@ import Number from '../components/UI/molecules/dashboard/Number';
 import BarGraph from '../components/UI/molecules/dashboard/BarGraph';
 import DonutGraph from '../components/UI/molecules/dashboard/DonutGraph';
 import ProjectToolTip from '../components/UI/molecules/ProjectToolTip';
+import OptionModal from '../components/UI/molecules/OptionModal';
 
 export default {
 	title: 'Molecules',
@@ -15,7 +16,7 @@ export default {
 };
 
 export const addButton = () => {
-	return <AddButton text="add!" />;
+	return <AddButton onClick={() => {}} text="add!" />;
 };
 
 export const projectNameBar = () => {
@@ -26,6 +27,10 @@ export const projectNameBar = () => {
 			members={['kyuung', 'jinsung', 'hwang chang', 'young woo']}
 		/>
 	);
+};
+
+export const optionModal = () => {
+	return <OptionModal isModal={true} />;
 };
 
 export const boardCard = () => {

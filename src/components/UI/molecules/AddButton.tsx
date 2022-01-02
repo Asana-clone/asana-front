@@ -3,17 +3,30 @@ import styled from '@emotion/styled';
 import Grid from '../atoms/Grid';
 import { BiPlus } from 'react-icons/bi';
 import Text from '../atoms/Text';
+import Icons from '../atoms/Icons';
 
 interface AddButtonProps {
 	text: string;
 	isDotradius?: boolean;
+	iconType?: string;
+	position?: 'start' | 'center';
+	onClick: () => void;
 }
 
-const AddButton: React.FC<AddButtonProps> = ({ text, isDotradius }) => {
+const AddButton: React.FC<AddButtonProps> = ({
+	text,
+	isDotradius,
+	onClick,
+	position,
+	iconType,
+}) => {
 	const [background, setBackground] = useState('#ffffff');
 	const [color, setColor] = useState('#6D6E6F');
+	const HandleClick = (): void => onClick();
+
 	return (
 		<button
+			onClick={HandleClick}
 			onMouseEnter={() => {
 				setBackground('#EFEEEE');
 				setColor('black');
@@ -25,7 +38,7 @@ const AddButton: React.FC<AddButtonProps> = ({ text, isDotradius }) => {
 			style={{ border: 'none', backgroundColor: background, borderRadius: '0.5rem' }}
 		>
 			<Grid
-				position="center"
+				position={position}
 				isCursor={true}
 				background={'inherit'}
 				height="2.5rem"
@@ -36,11 +49,7 @@ const AddButton: React.FC<AddButtonProps> = ({ text, isDotradius }) => {
 						<BiPlus size={'1.5rem'} style={{ cursor: 'pointer' }} />
 					</Dotradius>
 				) : (
-					<BiPlus
-						color={color}
-						size={'1.5rem'}
-						style={{ cursor: 'pointer', marginRight: '0.5rem' }}
-					/>
+					<Icons typeName={`${iconType}`} color={'black'} />
 				)}
 				<Text weight="500" color={color}>
 					{text}
@@ -53,6 +62,8 @@ const AddButton: React.FC<AddButtonProps> = ({ text, isDotradius }) => {
 AddButton.defaultProps = {
 	text: 'Add some..',
 	isDotradius: false,
+	position: 'center',
+	iconType: 'plus',
 };
 
 const Dotradius = styled.div`

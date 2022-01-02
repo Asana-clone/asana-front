@@ -13,7 +13,7 @@ const OverViewPR: React.FC = () => {
 				</Text>
 			</p>
 			<Grid position="start">
-			<AddButton text="Add member" isDotradius={true} />
+				<AddButton onClick={() => {}} text="Add member" isDotradius={true} />
 				<MemberCard name="jinsung" text="Project Owner" color="#DDA211" />
 				<MemberCard name="kyuung" text="+ Add role" color="#fc989a" />
 			</Grid>
