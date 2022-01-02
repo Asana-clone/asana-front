@@ -11,6 +11,7 @@ interface AddButtonProps {
 	iconType?: string;
 	position?: 'start' | 'center';
 	onClick: () => void;
+	lineColor?: string;
 }
 
 const AddButton: React.FC<AddButtonProps> = ({
@@ -19,6 +20,7 @@ const AddButton: React.FC<AddButtonProps> = ({
 	onClick,
 	position,
 	iconType,
+	lineColor,
 }) => {
 	const [background, setBackground] = useState('#ffffff');
 	const [color, setColor] = useState('#6D6E6F');
@@ -49,11 +51,17 @@ const AddButton: React.FC<AddButtonProps> = ({
 						<BiPlus size={'1.5rem'} style={{ cursor: 'pointer' }} />
 					</Dotradius>
 				) : (
-					<Icons typeName={`${iconType}`} color={'black'} />
+					<Icons color={`${lineColor}`} typeName={`${iconType}`} />
 				)}
-				<Text weight="500" color={color}>
-					{text}
-				</Text>
+				{lineColor === 'black' ? (
+					<Text weight="500" color={color}>
+						{text}
+					</Text>
+				) : (
+					<Text weight="500" color={lineColor}>
+						{text}
+					</Text>
+				)}
 			</Grid>
 		</button>
 	);
@@ -64,6 +72,7 @@ AddButton.defaultProps = {
 	isDotradius: false,
 	position: 'center',
 	iconType: 'plus',
+	lineColor: 'black',
 };
 
 const Dotradius = styled.div`
