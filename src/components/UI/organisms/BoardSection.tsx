@@ -3,6 +3,7 @@ import styled from '@emotion/styled';
 import AddButton from '../molecules/AddButton';
 import BoardCard from '../molecules/BoardCard';
 import BoardSectionTitle from '../molecules/BoardSectionTitle';
+import OptionModal from '../molecules/OptionModal';
 
 interface Props {
 	tasks: Array<string>;
@@ -13,12 +14,14 @@ interface Props {
 const BoardSection: React.FC<Props> = ({ tasks, sectionName, id }) => {
 	const [cardDesc, setCardDesc] = useState(tasks);
 	const [isBlank, setIsBlank] = useState(false);
+	const [isModal, setIsModal] = useState(false);
 
 	return (
 		<Container>
+			{isModal && <OptionModal />}
 			<BoardSectionTitle
 				onClickPlus={() => setIsBlank(!isBlank)}
-				onClickDots={() => {}}
+				onClickDots={() => setIsModal(!isModal)}
 				sectionName={sectionName}
 			/>
 			{cardDesc.map((desc, idx) => (
@@ -32,6 +35,7 @@ const BoardSection: React.FC<Props> = ({ tasks, sectionName, id }) => {
 
 const Container = styled.div`
 	display: flex;
+	position: relative;
 	width: 18.3rem;
 	flex-direction: column;
 	justify-content: start;

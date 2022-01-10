@@ -14,8 +14,6 @@ interface Props {
 	isCursor?: boolean;
 	border?: string;
 	isRadius?: boolean;
-	// isScroll?: 'scrollY' | 'scrollX' | false;
-	// isHidden?: 'hiddenY' | 'hiddenX' | false;
 }
 
 const Grid: React.FC<Props> = ({ _onClick, children, ...props }): React.ReactElement => {
@@ -38,8 +36,6 @@ Grid.defaultProps = {
 	isCursor: false,
 	border: 'none',
 	isRadius: false,
-	// isScroll: false,
-	// isHidden: false,
 };
 
 const Container = styled.div<Props>`

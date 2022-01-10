@@ -1,16 +1,24 @@
+import styled from '@emotion/styled';
 import React from 'react';
 import Grid from '../atoms/Grid';
 import AddButton from './AddButton';
 
-interface Props {
-	isModal: boolean;
-}
+interface Props {}
 
-const OptionModal: React.FC<Props> = ({ isModal }) => {
+const OptionModal: React.FC<Props> = () => {
 	return (
 		<>
-			{isModal && (
-				<Grid kind="FC" position="start" width="16rem">
+			<Pos>
+				<Grid
+					kind="FC"
+					position="start"
+					width="16.8rem"
+					height="9rem"
+					border="1px solid lightgray"
+					isRadius={true}
+					padding="0.2rem 0.2rem"
+					background="#fff"
+				>
 					<AddButton
 						iconType="rename"
 						text="Rename section"
@@ -31,9 +39,16 @@ const OptionModal: React.FC<Props> = ({ isModal }) => {
 						onClick={() => {}}
 					/>
 				</Grid>
-			)}
+			</Pos>
 		</>
 	);
 };
+
+const Pos = styled.div`
+	position: absolute;
+	z-index: 1;
+	top: 2rem;
+	right: 0;
+`;
 
 export default OptionModal;

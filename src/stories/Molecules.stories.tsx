@@ -2,7 +2,6 @@ import NavMenu from '../components/UI/molecules/NavMenu';
 import AddButton from '../components/UI/molecules/AddButton';
 import BoardCard from '../components/UI/molecules/BoardCard';
 import MemberCard from '../components/UI/molecules/MemberCard';
-import ProjectNameBar from '../components/UI/molecules/ProjectNameBar';
 import ListRow from '../components/UI/molecules/ListRow';
 import Number from '../components/UI/molecules/dashboard/Number';
 import BarGraph from '../components/UI/molecules/dashboard/BarGraph';
@@ -19,18 +18,8 @@ export const addButton = () => {
 	return <AddButton onClick={() => {}} text="add!" />;
 };
 
-export const projectNameBar = () => {
-	return (
-		<ProjectNameBar
-			color="yellow"
-			name="clone"
-			members={['kyuung', 'jinsung', 'hwang chang', 'young woo']}
-		/>
-	);
-};
-
 export const optionModal = () => {
-	return <OptionModal isModal={true} />;
+	return <OptionModal />;
 };
 
 export const boardCard = () => {
